@@ -1,4 +1,4 @@
-# SBIR Skill 自動安裝程式 (OpenCode - Windows)
+﻿# SBIR Skill 自動安裝程式 (OpenCode - Windows)
 # 將 SBIR MCP Server 設定到 OpenCode 的 opencode.json
 # 重要：不會覆蓋您現有的 OpenCode 設定（plugin、provider、其他 MCP 等）
 
