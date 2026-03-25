@@ -50,7 +50,7 @@ SaaS 前後端專案原始碼皆位於 `saas/` 資料夾內。
 | 🔑 **BYOK 金鑰** | 支援使用自己的 Claude / OpenAI / Gemini API Key |
 
 **技術架構**：Cloudflare Workers + D1 + R2 + Vectorize + AI + Queues  
-**完整部署文件**：👉 [SAAS.md](SAAS.md)
+**完整部署文件**：👉 [SAAS.md](sbir-grants/SAAS.md)
 
 ---
 
@@ -66,7 +66,7 @@ SaaS 前後端專案原始碼皆位於 `saas/` 資料夾內。
 | 📋 **委託案籌備中 (4)** | 基隆市（1/1 決標）、宜蘭縣（2/13 決標）、花蓮縣（招標中）、台南市（招標中） |
 | 📅 **待公告 (17)** | 所有其他縣市皆尚未發布 115 年度正式公告（包含桃園、新北、新竹縣市、台中、彰化、高雄等），往年多集中於 4-6 月 |
 
-更多詳細資訊：[地方型 SBIR 追蹤表](references/local_sbir_2026_tracker.md)
+更多詳細資訊：[地方型 SBIR 追蹤表](sbir-grants/references/local_sbir_2026_tracker.md)
 
 ### 🛠️ MCP Server 代碼修復（14 項）
 
@@ -129,7 +129,7 @@ bash install-mac.sh
 
 ### 不會用終端機？
 
-👉 看[完整圖文教學](INSTALLATION.md)（超級詳細，一步步教您）
+👉 看[完整圖文教學](sbir-grants/INSTALLATION.md)（超級詳細，一步步教您）
 
 ---
 
@@ -238,7 +238,7 @@ Claude：🎉 計畫書已生成！
 | 隨時修改答案 | ✅ | ⚠️ 需重新回答 |
 | 體驗 | 最佳 | 完整功能 |
 
-👉 查看[使用指南](proposal_generator/USAGE.md)
+👉 查看[使用指南](sbir-grants/proposal_generator/USAGE.md)
 
 ---
 
@@ -345,23 +345,23 @@ Claude：[使用 submission_checklist.md]
 
 ### 快速開始
 
-- 🚀 [第一次使用](FIRST_TIME_USE.md) - 4 個範例問題
-- 📖 [完整使用說明](HOW_TO_USE.md) - 詳細功能介紹
-- ✅ [確認安裝成功](VERIFICATION.md) - 測試方法
+- 🚀 [第一次使用](sbir-grants/FIRST_TIME_USE.md) - 4 個範例問題
+- 📖 [完整使用說明](sbir-grants/HOW_TO_USE.md) - 詳細功能介紹
+- ✅ [確認安裝成功](sbir-grants/VERIFICATION.md) - 測試方法
 
 ### 新手指南
 
-- 📚 [SBIR 新手入門](GETTING_STARTED.md) - 從零開始
-- ⚡ [10 分鐘資格檢查](quick_start/10min_eligibility_check.md)
-- 💡 [1 小時構想驗證](quick_start/1hour_idea_validation.md)
-- 🚀 [1 週計畫書衝刺](quick_start/1week_proposal_sprint.md)
+- 📚 [SBIR 新手入門](sbir-grants/GETTING_STARTED.md) - 從零開始
+- ⚡ [10 分鐘資格檢查](sbir-grants/quick_start/10min_eligibility_check.md)
+- 💡 [1 小時構想驗證](sbir-grants/quick_start/1hour_idea_validation.md)
+- 🚀 [1 週計畫書衝刺](sbir-grants/quick_start/1week_proposal_sprint.md)
 
 ### 進階資源
 
-- 📝 [方法論系列](references/) - 6 個完整框架
-- ❓ [FAQ 大全](FAQ.md) - 81 個常見問題
-- 📊 [案例研究](examples/case_studies/) - 成功 + 失敗案例
-- 📋 [範本庫](templates/) - Phase 1/2 範本
+- 📝 [方法論系列](sbir-grants/references/) - 6 個完整框架
+- ❓ [FAQ 大全](sbir-grants/FAQ.md) - 81 個常見問題
+- 📊 [案例研究](sbir-grants/examples/case_studies/) - 成功 + 失敗案例
+- 📋 [範本庫](sbir-grants/templates/) - Phase 1/2 範本
 
 ---
 
@@ -436,13 +436,13 @@ cd sbir-grants && git pull
 
 ## 🤝 貢獻
 
-歡迎貢獻！請查看 [CONTRIBUTING.md](CONTRIBUTING.md)
+歡迎貢獻！請查看 [CONTRIBUTING.md](sbir-grants/CONTRIBUTING.md)
 
 ---
 
 ## 📄 授權
 
-MIT License - 詳見 [LICENSE](LICENSE)
+MIT License - 詳見 [LICENSE](sbir-grants/LICENSE)
 
 ---
 
@@ -458,7 +458,7 @@ MIT License - 詳見 [LICENSE](LICENSE)
 
 **讓 AI 協助您成功申請 SBIR 補助**
 
-[⬇️ 立即下載](https://github.com/backtrue/sbir-grants/archive/refs/heads/main.zip) • [📖 查看文件](GETTING_STARTED.md) • [💬 問題回報](https://github.com/backtrue/sbir-grants/issues)
+[⬇️ 立即下載](https://github.com/backtrue/sbir-grants/archive/refs/heads/main.zip) • [📖 查看文件](sbir-grants/GETTING_STARTED.md) • [💬 問題回報](https://github.com/backtrue/sbir-grants/issues)
 
 ---
 
