@@ -53,7 +53,7 @@ if errorlevel 1 (
 )
 
 for /f "tokens=*" %%i in ('python --version') do set "PYTHON_VERSION=%%i"
-echo [!] 未找到 uv，改用 Python: !PYTHON_VERSION!
+echo [*] 未找到 uv，改用 Python: !PYTHON_VERSION!
 echo   建議安裝 uv: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 echo.
 
@@ -146,8 +146,8 @@ if !errorlevel! neq 0 (
 )
 
 echo [OK] OpenCode 設定已安全更新
-echo   設定檔位置: !OPENCODE_CONFIG_FILE!
-echo   已保留其他設定 - plugin、provider、其他 MCP 等
+echo   [i] 設定檔位置: !OPENCODE_CONFIG_FILE!
+echo   [i] 已保留其他設定 - plugin、provider、其他 MCP 等
 echo.
 
 REM ============================================
@@ -162,14 +162,14 @@ if "!USE_UV!"=="1" (
 )
 
 if errorlevel 1 (
-    echo [!] 部分核心模組驗證失敗，Server 可能無法正常啟動
+    echo [*] 部分核心模組驗證失敗，Server 可能無法正常啟動
 ) else (
     echo [OK] 核心模組驗證通過
 )
 
 findstr /C:"sbir-data" "!OPENCODE_CONFIG_FILE!" >nul 2>&1
 if errorlevel 1 (
-    echo [!] OpenCode 設定檔可能未正確更新
+    echo [*] OpenCode 設定檔可能未正確更新
 ) else (
     echo [OK] OpenCode 設定檔包含 sbir-data MCP
 )
@@ -188,15 +188,15 @@ echo   - 完全關閉 OpenCode
 echo   - 重新開啟 OpenCode
 echo.
 echo 2. 驗證 MCP Server 是否掛載成功：
-echo   在 OpenCode 中嘗試使用 SBIR 相關工具
+echo   [i] 在 OpenCode 中嘗試使用 SBIR 相關工具
 echo.
 echo 3. 查看使用指南：
 echo   - FIRST_TIME_USE.md
 echo   - HOW_TO_USE.md
 echo.
 echo 注意事項：
-echo   - 已保留您原有的 OpenCode 設定
-echo   - 備份檔案：opencode.json.bak
+echo   [i] 已保留您原有的 OpenCode 設定
+echo   [i] 備份檔案：opencode.json.bak
 echo.
 echo ==========================================
 
