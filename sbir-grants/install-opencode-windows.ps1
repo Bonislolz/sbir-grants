@@ -182,26 +182,40 @@ Write-Host ""
 # ============================================
 Write-Host "步驟 4/4: 驗證安裝..."
 
-$verifyCmd = 'import mcp; import pydantic; import httpx; import yaml; import docx; print("CORE_OK")'
+# 驗證階段不應中斷安裝，暫時允許 stderr
+$ErrorActionPreference = "Continue"
 
-if ($UseUV) {
-    $verifyResult = & uv run --directory (Join-Path $ScriptDir "mcp-server") python -c $verifyCmd 2>$null
-} else {
-    $verifyResult = & "venv\Scripts\python.exe" -c $verifyCmd 2>$null
+$verifyCmd = 'import mcp; import pydantic; import httpx; import yaml; import docx; print("CORE_OK")'
+$verifyResult = $null
+
+try {
+    if ($UseUV) {
+        $mcpDir = Join-Path $ScriptDir "mcp-server"
+        $verifyResult = & uv run --directory $mcpDir python -c $verifyCmd 2>&1 | Where-Object { $_ -match "CORE_OK" }
+    } else {
+        $verifyResult = & "venv\Scripts\python.exe" -c $verifyCmd 2>&1 | Where-Object { $_ -match "CORE_OK" }
+    }
+} catch {
+    # 驗證失敗不影響安裝結果
 }
 
-if ($verifyResult -match "CORE_OK") {
+if ($verifyResult) {
     Write-Host "[OK] 核心模組驗證通過" -ForegroundColor Green
 } else {
     Write-Host "[!] 部分核心模組驗證失敗，Server 可能無法正常啟動" -ForegroundColor Yellow
+    Write-Host "    首次啟動時 uv 會自動安裝依賴，屆時即可正常運作"
 }
 
-$configContent = Get-Content $OpenCodeConfigFile -Raw -ErrorAction SilentlyContinue
-if ($configContent -match "sbir-data") {
-    Write-Host "[OK] OpenCode 設定檔包含 sbir-data MCP" -ForegroundColor Green
-} else {
-    Write-Host "[!] OpenCode 設定檔可能未正確更新" -ForegroundColor Yellow
-}
+try {
+    $configContent = Get-Content $OpenCodeConfigFile -Raw -ErrorAction SilentlyContinue
+    if ($configContent -match "sbir-data") {
+        Write-Host "[OK] OpenCode 設定檔包含 sbir-data MCP" -ForegroundColor Green
+    } else {
+        Write-Host "[!] OpenCode 設定檔可能未正確更新" -ForegroundColor Yellow
+    }
+} catch {}
+
+$ErrorActionPreference = "Stop"
 Write-Host ""
 
 # ============================================
